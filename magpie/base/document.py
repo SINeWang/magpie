@@ -4,6 +4,8 @@ import io
 import os
 import nltk
 import string
+import jieba
+
 
 from nltk.tokenize import WordPunctTokenizer, sent_tokenize, word_tokenize
 
@@ -49,3 +51,23 @@ class Document(object):
                for sentence in sent_tokenize(inner_list)]
         return [[w.lower() for w in word_tokenize(s) if w not in string.punctuation]
                 for s in raw]
+
+
+    # 利用jieba包进行分词，并并且去掉停词，返回分词后的文本
+    def seg_text(self,text):
+        stop = [line.strip() for line in open('data/stopwords.txt', encoding='utf8').readlines()]
+        text_seged = jieba.cut(text.strip())
+        outstr = ''
+        for word in text_seged:
+            if word not in stop:
+                outstr += word
+                outstr += ""
+        return outstr.strip()
+
+    # 清洗文本，去除标点符号数字以及特殊符号
+    def clean_text(self,content):
+        text = re.sub(r'[+——！，；／·。？、~@#￥%……&*“”《》：（）［］【】〔〕]+', '', content)
+        text = re.sub(r'[▲!"#$%&\'()*+,-./:;<=>\\?@[\\]^_`{|}~]+', '', text)
+        text = re.sub('\d+', '', text)
+        text = re.sub('\s+', '', text)
+        return text

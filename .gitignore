@@ -63,3 +63,10 @@ target/
 # Magpie
 data/hep/test/
 data/hep/train/
+
+# Virtualenv
+bin/
+include
+
+# model persistence
+save/
