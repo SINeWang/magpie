@@ -69,5 +69,5 @@ bin/
 include
 venv/
 
-# model persistence
-save/
+# workspace
+workspace/
