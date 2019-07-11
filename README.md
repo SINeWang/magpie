@@ -66,9 +66,9 @@ Trained models can be used for prediction with methods:
 A `Magpie` object consists of three components - the word2vec mappings, a scaler and a `keras` model. In order to train Magpie you can either provide the word2vec mappings and a scaler in advance or let the program compute them for you on the training data. Usually you would want to train them yourself on a full dataset and reuse them afterwards. You can use the provided functions for that purpose:
 
 ```python
-magpie.save_word2vec_model('/save/my/embeddings/here')
-magpie.save_scaler('/save/my/scaler/here', overwrite=True)
-magpie.save_model('/save/my/model/here.h5')
+magpie.save_word2vec_model(workspace)
+magpie.save_scaler(workspace, overwrite=True)
+magpie.save_model(workspace)
 ```
 
 When you want to reinitialize your trained model, you can run:
@@ -85,9 +85,8 @@ or just pass the objects directly!
 
 ## Installation
 
-The package is not on PyPi, but you can get it directly from GitHub:
 ```
-$ pip install git+https://github.com/inspirehep/magpie.git@v2.0
+pip3 install -r requirements.txt
 ```
 If you encounter any problems with the installation, make sure to install the correct versions of dependencies listed in `setup.py` file.
 

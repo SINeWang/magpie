@@ -1,3 +1,8 @@
+import os
+import sys
+
+sys.path.append(os.path.realpath(os.getcwd()))
+
 from magpie import Magpie
 
 magpie = Magpie()
@@ -8,6 +13,6 @@ labels = ['军事','旅游','政治'] #定义所有类别
 magpie.train('data/hep-categories', labels, test_ratio=0.2, epochs=20) #训练，20%数据作为测试数据，5轮
 
 #保存训练后的模型文件
-magpie.save_word2vec_model('save/embeddings/here', overwrite=True)
-magpie.save_scaler('save/scaler/here', overwrite=True)
-magpie.save_model('save/model/here.h5')
+magpie.save_word2vec_model('../workspace/embeddings', overwrite=True)
+magpie.save_scaler('../workspace/scaler', overwrite=True)
+magpie.save_model('../workspace/mode.h5')

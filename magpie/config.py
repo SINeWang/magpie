@@ -13,5 +13,5 @@ NN_ARCHITECTURE = 'cnn'
 BATCH_SIZE = 64
 EPOCHS = 1
 
-# Number of tokens to save from the abstract, zero padded
+# Number of tokens to workspace from the abstract, zero padded
 SAMPLE_LENGTH = 200

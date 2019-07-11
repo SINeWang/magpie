@@ -275,7 +275,7 @@ class Magpie(object):
     def save_scaler(self, filepath, overwrite=False):
         """ Save the scaler object to a file """
         if not self.scaler:
-            raise ValueError("Can't save the scaler, " + \
+            raise ValueError("Can't workspace the scaler, " + \
                              "it has not been trained yet")
         save_to_disk(filepath, self.scaler, overwrite=overwrite)
 
@@ -286,7 +286,7 @@ class Magpie(object):
     def save_word2vec_model(self, filepath, overwrite=False):
         """ Save the word2vec model to a file """
         if not self.word2vec_model:
-            raise ValueError("Can't save the word2vec model, " + \
+            raise ValueError("Can't workspace the word2vec model, " + \
                              "it has not been trained yet")
         save_to_disk(filepath, self.word2vec_model, overwrite=overwrite)
 
@@ -297,7 +297,7 @@ class Magpie(object):
     def save_model(self, filepath):
         """ Save the keras NN model to a HDF5 file """
         if not self.keras_model:
-            raise ValueError("Can't save the model, " \
+            raise ValueError("Can't workspace the model, " \
                              "it has not been trained yet")
 
         if os.path.exists(filepath):
