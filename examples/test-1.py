@@ -1,9 +1,14 @@
+import os
+import sys
+sys.path.append(os.path.realpath(os.getcwd()))
+sys.path.append("..")
+
 from magpie import Magpie
 
 magpie = Magpie(
-    keras_model='../workspace/model/here.h5',
-    word2vec_model='../workspace/embeddings/here',
-    scaler='../workspace/scaler/here',
+    keras_model='workspace/mode.h5',
+    word2vec_model='workspace/embeddings',
+    scaler='workspace/scaler',
     labels=['旅游', '军事', '政治']
 )
 

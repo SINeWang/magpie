@@ -15,6 +15,8 @@ from magpie.nn.input_data import get_data_for_model
 from magpie.nn.models import get_nn_model
 from magpie.utils import save_to_disk, load_from_disk
 
+sys.path.append(os.path.realpath(os.getcwd()))
+sys.path.append("..")
 
 class Magpie(object):
 
