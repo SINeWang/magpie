@@ -16,4 +16,4 @@ magpie.train('../data/hep-categories', labels, test_ratio=0.2, epochs=20) #训�
 #保存训练后的模型文件
 magpie.save_word2vec_model('../workspace/embeddings', overwrite=True)
 magpie.save_scaler('../workspace/scaler', overwrite=True)
-magpie.save_model('../workspace/mode.h5')
+magpie.save_model('../workspace/model.h5')

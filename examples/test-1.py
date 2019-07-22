@@ -6,9 +6,9 @@ sys.path.append("..")
 from magpie import Magpie
 
 magpie = Magpie(
-    keras_model='workspace/mode.h5',
-    word2vec_model='workspace/embeddings',
-    scaler='workspace/scaler',
+    keras_model='../workspace/model.h5',
+    word2vec_model='../workspace/embeddings',
+    scaler='../workspace/scaler',
     labels=['旅游', '军事', '政治']
 )
 
